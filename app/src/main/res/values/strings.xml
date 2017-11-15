@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RuangKelas</string>
+    <string name="sunting_profil">Sunting Profil</string>
+    <string name="sign_out">Keluar Akun</string>
+</resources>

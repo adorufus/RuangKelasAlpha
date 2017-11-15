@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/loginCoorLayout"
+    android:layout_height="match_parent"
+    tools:context="org.digidaw.ruangkelas.Utilitas.StartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="RuangKelas"
+            android:textStyle="bold"
+            android:id="@+id/titleText"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleText"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nomor Induk Siswa (NIS):"
+                android:textColor="@android:color/white"
+                android:id="@+id/textNis"
+                android:layout_centerHorizontal="true"/>
+
+            <EditText
+                android:id="@+id/editTextNis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textNis"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@android:color/white"
+                android:ems="10"
+                android:textColor="@android:color/white"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextNis"
+                android:text="Password"
+                android:textColor="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/textPassword"/>
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textPassword"
+                android:layout_centerHorizontal="true"
+                android:elevation="4dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:backgroundTint="@android:color/white"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextPassword"
+                android:layout_centerHorizontal="true"
+                android:text="Masuk"
+                android:id="@+id/btnMasuk"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btnMasuk"
+                android:text="Lupa Password?"
+                android:id="@+id/lupaPassword"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/lupaPassword"
+                android:text="Klik Disini"
+                android:id="@+id/lupaPasswordLink"
+                android:textColor="@android:color/holo_blue_light"/>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/loginProgress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "1066181601942",
+    "firebase_url": "https://ruangkelas-48c7b.firebaseio.com",
+    "project_id": "ruangkelas-48c7b",
+    "storage_bucket": "ruangkelas-48c7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066181601942:android:818bb809dfcd6e76",
+        "android_client_info": {
+          "package_name": "org.kuatcore.ruangkelas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066181601942-kjno6q8l4e3tj3io6bd9f8na14qiml5e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.kuatcore.ruangkelas",
+            "certificate_hash": "b5907e9c58e0243d2f58fbfc504665cf4c711721"
+          }
+        },
+        {
+          "client_id": "1066181601942-ne5ehk70h0mhgki5vfnb3v67ngsgndsk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.kuatcore.ruangkelas",
+            "certificate_hash": "109c5da3701d001d8a3cbfe50d1357b38b5140a4"
+          }
+        },
+        {
+          "client_id": "1066181601942-c89vrmdhv1jhf6ejrg7s4bsu6hb4q50v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdnzaOj74AU5aMEyhWp98pIwr__R4ZLWk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066181601942-c89vrmdhv1jhf6ejrg7s4bsu6hb4q50v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066181601942:android:b63dbdc7299db104",
+        "android_client_info": {
+          "package_name": "org.digidaw.ruangkelas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066181601942-krumpdd89gk735843coffog2ofn13ra2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.digidaw.ruangkelas",
+            "certificate_hash": "109c5da3701d001d8a3cbfe50d1357b38b5140a4"
+          }
+        },
+        {
+          "client_id": "1066181601942-piic8fclha71nfts1hcgq6u5m3h00f6p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.digidaw.ruangkelas",
+            "certificate_hash": "b5907e9c58e0243d2f58fbfc504665cf4c711721"
+          }
+        },
+        {
+          "client_id": "1066181601942-c89vrmdhv1jhf6ejrg7s4bsu6hb4q50v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdnzaOj74AU5aMEyhWp98pIwr__R4ZLWk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066181601942-c89vrmdhv1jhf6ejrg7s4bsu6hb4q50v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
