@@ -21,7 +21,7 @@
         <activity android:name=".Profile.ProfileActivity" />
         <activity android:name=".Student.StudentActivity" />
         <activity android:name=".Profile.AccountSettingActivity" />
-        <activity android:name=".Utilitas.StartActivity"></activity>
+        <activity android:name=".Utilitas.StartActivity" />
     </application>
 
 </manifest>
