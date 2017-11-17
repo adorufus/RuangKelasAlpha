@@ -9,10 +9,12 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     dexOptions {
+        preDexLibraries false
         javaMaxHeapSize "4g"
     }
 
@@ -63,11 +65,13 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.google.firebase:firebase-database:10.0.1'
-    compile 'com.google.firebase:firebase-storage:10.0.1'
-    compile 'com.google.firebase:firebase-auth:10.0.1'
-    compile 'com.google.android.gms:play-services-maps:10.0.1'
-    compile 'com.google.android.gms:play-services-location:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.2.0'
+    compile 'com.google.firebase:firebase-storage:10.2.0'
+    compile 'com.google.firebase:firebase-auth:10.2.0'
+    compile 'com.google.android.gms:play-services-maps:10.2.0'
+    compile 'com.google.android.gms:play-services-location:10.2.0'
+    compile 'com.android.support:multidex:1.0.1'
+
     testCompile 'junit:junit:4.12'
 }
 

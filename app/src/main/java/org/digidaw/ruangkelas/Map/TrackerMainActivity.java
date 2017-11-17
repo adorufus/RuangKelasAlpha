@@ -2,7 +2,7 @@ package org.digidaw.ruangkelas.Map;
 
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
+import com.google.android.gms.location.LocationListener;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -135,7 +135,6 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
-
     private void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -212,49 +211,6 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu_tracker, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.action_join:
-                counterRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .setValue(new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(), "Online"));
-                break;
-
-            case R.id.kembali:
-                onBackPressed();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-        mLastLocation = location;
-        displayLocation();
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
-    }
-
-    @Override
     public void onConnected(@Nullable Bundle bundle) {
         displayLocation();
         startLocationUpdates();
@@ -265,7 +221,7 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
                 ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             return;
         }
-        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, (com.google.android.gms.location.LocationListener) this);
+        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
     }
 
     @Override
@@ -274,6 +230,12 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        mLastLocation = location;
+        displayLocation();
     }
 
     @Override
@@ -296,5 +258,27 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
     protected void onResume() {
         super.onResume();
         checkPlayServices();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu_tracker, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_join:
+                counterRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .setValue(new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(), "Online"));
+                break;
+
+            case R.id.kembali:
+                onBackPressed();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
