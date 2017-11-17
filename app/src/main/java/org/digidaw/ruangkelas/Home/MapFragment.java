@@ -30,7 +30,12 @@ public class MapFragment extends Fragment {
         cobaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                switch(v.getId()){
+                    case R.id.btnCoba:
+                        Intent intent = new Intent(getActivity(), TrackerMainActivity.class);
+                        startActivity(intent);
+                        break;
+                }
             }
         });
 
