@@ -1,5 +1,6 @@
 package org.digidaw.ruangkelas.Map;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import com.google.android.gms.location.LocationListener;
@@ -12,9 +13,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -31,6 +34,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.digidaw.ruangkelas.ItemClickListener;
 import org.digidaw.ruangkelas.Manifest;
 import org.digidaw.ruangkelas.R;
 
@@ -123,7 +127,8 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
                             String.valueOf(mLastLocation.getLongitude())));
         }
         else{
-            Toast.makeText(this, "Tidak bisa mendapatkan lokasi", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Tidak bisa mendapatkan lokasi", Toast.LENGTH_LONG).show();
+            Log.d("TEST", "Tidak bisa mendapatkan lokasi");
         }
     }
 
@@ -166,8 +171,23 @@ public class TrackerMainActivity extends AppCompatActivity implements GoogleApiC
                 counterRef
         ) {
             @Override
-            protected void populateViewHolder(ListOnlineViewHolder viewHolder, User model, int position) {
+            protected void populateViewHolder(ListOnlineViewHolder viewHolder, final User model, int position) {
                 viewHolder.txtUsername.setText(model.getUsername());
+
+                //harus mengimplementasi recycler view agar bisa di klik
+                viewHolder.itemClickListener = new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position) {
+                        //jika model adalah user yang login di perangkat ini, jangan set click event
+                        if(!model.getUsername().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())){
+                            Intent map = new Intent(TrackerMainActivity.this, MapsActivity.class);
+                            map.putExtra("email", FirebaseAuth.getInstance().getCurrentUser().getEmail());
+                            map.putExtra("lat", mLastLocation.getLatitude());
+                            map.putExtra("lng", mLastLocation.getLongitude());
+                            startActivity(map);
+                        }
+                    }
+                };
             }
         };
 
